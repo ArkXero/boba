@@ -1,0 +1,100 @@
+:root{
+    --glass-tint: #ffffff24;
+    --glass-border: #ffffff73;
+    --glass-highlight: #ffffffd6;
+    --icon-color: #ffffff;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08)), url("img/background.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.toolbar{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px;
+    border-radius: 999px;
+
+    background: var(--glass-tint);
+    border: 1px solid var(--glass-border);
+
+    backdrop-filter: blur(5px) saturate(200%);
+    -webkit-backdrop-filter: blur(5px) saturate(200%);
+    box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.25),
+    inset 0 1px 1px var(--glass-highlight),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.15),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.btn{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    border: none;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.15s ease;
+}
+
+.btn:hover{
+    background: rgba(255, 255, 255, 0.22);
+}
+
+.btn:active{
+    transform: scale(0.96);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.btn svg{
+    width: 28px;
+    height: 28px;
+    stroke: var(--icon-color);
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+}
+
+.divider{
+    width: 1px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.35);
+    margin: 0 2px;
+}
+
+.btn.search{
+    width: auto;
+    padding: 0 26px 0 22px;
+    border-radius: 999px;
+    gap: 10px;
+}
+
+.btn.search span{
+    color: var(--icon-color);
+    font-size: 17px;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
